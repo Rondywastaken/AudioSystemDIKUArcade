@@ -4,6 +4,7 @@ using System;
 using System.Numerics;
 using DIKUArcade.Graphics;
 using DIKUArcade.Input;
+using DIKUArcade.Audio;
 
 /// <summary>
 /// Represents a graphical window in the DIKUArcade game engine.
@@ -100,6 +101,7 @@ public class Window : IDisposable {
     }
 
     private void Cleanup() {
+        AudioManager.CleanUp();
         window.Cleanup();
     }
 
