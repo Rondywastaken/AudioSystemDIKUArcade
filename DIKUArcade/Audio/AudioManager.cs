@@ -8,7 +8,7 @@ using System.Collections.Generic;
 /// Contains methods for adding audios, removing audios and cleaning up audios.
 /// </summary>
 public static class AudioManager {
-    private static List<Audio> audioList = new List<Audio>(); 
+    private static List<Audio> audioList = new List<Audio>();
 
     /// <summary>
     /// Adds an <see cref="Audio"/> instance to the <c>AudioManager</c>.

@@ -103,7 +103,7 @@ public abstract class DIKUGame {
             // If exception occurs dispose resources
             window.Dispose();
             Environment.Exit(1);
-        } 
+        }
         gameTimer = null;
     }
 

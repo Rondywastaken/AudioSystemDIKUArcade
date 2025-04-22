@@ -1,12 +1,12 @@
 namespace TestDIKUArcade.AudioTest;
 
-using DIKUArcade;
-using DIKUArcade.GUI;
-using DIKUArcade.Audio;
-using DIKUArcade.Input;
-using DIKUArcade.Graphics;
 using System;
 using System.Numerics;
+using DIKUArcade;
+using DIKUArcade.Audio;
+using DIKUArcade.Graphics;
+using DIKUArcade.GUI;
+using DIKUArcade.Input;
 
 public class Game : DIKUGame {
     MusicAudio music;
@@ -40,25 +40,25 @@ public class Game : DIKUGame {
                         music.Resume();
                     }
                     break;
-                case KeyboardKey.P: 
+                case KeyboardKey.P:
                     music.Stop();
                     break;
-                case KeyboardKey.Up: 
+                case KeyboardKey.Up:
                     music.Volume += 0.1f;
                     break;
-                case KeyboardKey.Down: 
+                case KeyboardKey.Down:
                     music.Volume -= 0.1f;
                     break;
-                case KeyboardKey.W: 
+                case KeyboardKey.W:
                     music.Pitch += 0.01f;
                     break;
-                case KeyboardKey.S: 
+                case KeyboardKey.S:
                     music.Pitch -= 0.01f;
                     break;
-                case KeyboardKey.E: 
+                case KeyboardKey.E:
                     music.Pan += 0.1f;
                     break;
-                case KeyboardKey.D: 
+                case KeyboardKey.D:
                     music.Pan -= 0.1f;
                     break;
                 case KeyboardKey.Space:
@@ -72,11 +72,11 @@ public class Game : DIKUGame {
         foreach (Text text in texts) {
             text.Render(context);
         }
-        
-        string info = $"Status: {music.Status} " 
-            + $"| Vol: {MathF.Round(music.Volume*100)}% "
-            + $"| Pitch: {MathF.Round(music.Pitch*100)}% "
-            + $"| Pan: {MathF.Round(music.Pan*100)}%";
+
+        string info = $"Status: {music.Status} "
+            + $"| Vol: {MathF.Round(music.Volume * 100)}% "
+            + $"| Pitch: {MathF.Round(music.Pitch * 100)}% "
+            + $"| Pan: {MathF.Round(music.Pan * 100)}%";
         Text infoBar = new Text(info, new Vector2(0.05f, 0.1f), 0.37f);
         infoBar.SetColor(70, 70, 70);
         infoBar.Render(context);

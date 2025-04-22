@@ -1,7 +1,7 @@
 namespace DIKUArcade.Audio;
 
-using Raylib_cs;
 using System.IO;
+using Raylib_cs;
 
 /// <summary>
 /// Static class to open and close the audiodevice. Contains methods for opening and closing
@@ -11,7 +11,9 @@ public static class AudioDevice {
     /// <summary>
     /// Gets whether the audiodevice is initlialized.
     /// </summary>
-    public static bool IsInitialized { get; private set; }
+    public static bool IsInitialized {
+        get; private set;
+    }
 
     /// <summary>
     /// Opens the audiodevice if it hasn't been initlialized. Also creates a directory

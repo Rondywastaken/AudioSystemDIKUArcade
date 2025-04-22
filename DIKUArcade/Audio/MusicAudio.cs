@@ -21,7 +21,9 @@ public class MusicAudio : Audio {
     /// <summary>
     /// Gets or sets whether the music should loop. 
     /// </summary>
-    public bool Loop { get; set; }
+    public bool Loop {
+        get; set;
+    }
 
     /// <summary>
     /// Overrides abstract property from <see cref="Audio"/> class to get or set the volume
@@ -30,7 +32,7 @@ public class MusicAudio : Audio {
     /// <remarks>
     /// Base volume is <c>0.8f</c>, min. volume is <c>0.0f</c> and max. volume is <c>1.0f</c>.
     /// </remarks>
-    public override float Volume { 
+    public override float Volume {
         get => volume;
         set {
             volume = Math.Clamp(value, 0.0f, 1.0f);
@@ -73,12 +75,12 @@ public class MusicAudio : Audio {
     /// the music, sets the volume and sets the loop to false.
     /// </summary>
     /// <param name="manifestResourceName">The name of the manifest resource</param>
-    public MusicAudio(string manifestResourceName) 
+    public MusicAudio(string manifestResourceName)
         : base(manifestResourceName, Assembly.GetCallingAssembly()) {
         music = Raylib.LoadMusicStream(Path);
         Volume = volume;
         Loop = false;
-    }   
+    }
 
     /// <summary>
     /// Creates a <see cref="MusicAudio"/> instance from an embedded resource, loads
@@ -86,12 +88,12 @@ public class MusicAudio : Audio {
     /// </summary>
     /// <param name="manifestResourceName">The name of the manifest resource</param>
     /// <param name="loop">whether the music should loop</param>
-    public MusicAudio(string manifestResourceName, bool loop) 
+    public MusicAudio(string manifestResourceName, bool loop)
         : base(manifestResourceName, Assembly.GetCallingAssembly()) {
         music = Raylib.LoadMusicStream(Path);
         Volume = volume;
         Loop = loop;
-    }   
+    }
 
     /// <summary>
     /// Overrides abstract method from <see cref="Audio"/> class to play the music. If the music
@@ -141,7 +143,7 @@ public class MusicAudio : Audio {
     /// <see cref="AudioManager"/>.     
     /// </summary>
     public override void Dispose() {
-        Raylib.UnloadMusicStream(music); 
+        Raylib.UnloadMusicStream(music);
         this.deleteTempFile();
         AudioManager.RemoveAudio(this);
     }
@@ -159,7 +161,7 @@ public class MusicAudio : Audio {
             if (timePlayed == timeLength) {
                 this.Stop();
             }
-        }     
+        }
     }
 
 }

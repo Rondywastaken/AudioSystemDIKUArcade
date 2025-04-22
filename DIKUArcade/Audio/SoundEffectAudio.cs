@@ -27,7 +27,7 @@ public class SoundEffectAudio : Audio {
     /// <remarks>
     /// Base volume is <c>0.8f</c>, min. volume is <c>0.0f</c> and max. volume is <c>1.0f</c>.
     /// </remarks>
-    public override float Volume { 
+    public override float Volume {
         get => volume;
         set {
             volume = Math.Clamp(value, 0.0f, 1.0f);
@@ -74,7 +74,7 @@ public class SoundEffectAudio : Audio {
         : base(manifestResourceName, Assembly.GetCallingAssembly()) {
         sound = Raylib.LoadSound(Path);
         Volume = volume;
-    }   
+    }
 
     /// <summary>
     /// Overrides abstract method from <see cref="Audio"/> class to play the sound. If the sound
@@ -130,7 +130,7 @@ public class SoundEffectAudio : Audio {
                 Raylib.UnloadSoundAlias(soundMulti[i]);
             }
         }
-        Raylib.UnloadSound(sound); 
+        Raylib.UnloadSound(sound);
         this.deleteTempFile();
         AudioManager.RemoveAudio(this);
     }

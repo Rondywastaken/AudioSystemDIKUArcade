@@ -23,7 +23,9 @@ public abstract class Audio : IDisposable {
     /// <summary>
     /// Gets the path of the audio's temporary audio file.
     /// </summary>
-    protected string Path { get; private set; }
+    protected string Path {
+        get; private set;
+    }
 
     /// <summary>
     /// Gets the current audio status of the audio instance.
@@ -56,7 +58,7 @@ public abstract class Audio : IDisposable {
             if (this.Path != null) {
                 this.Dispose();
             }
-            
+
             AudioManager.CleanUp();
             throw new Exception($"Problem creating Audio instance: {e.Message}");
         }
@@ -87,7 +89,7 @@ public abstract class Audio : IDisposable {
             string filePath = $"./tmp/{fileName}.{fileType}";
 
             // Copy stream data to temporary file
-            using(FileStream file = File.Create(filePath)) {
+            using (FileStream file = File.Create(filePath)) {
                 stream.CopyTo(file);
             }
 
@@ -105,17 +107,23 @@ public abstract class Audio : IDisposable {
     /// <summary>
     /// Property to be overridden by subclasses to control volume.
     /// </summary>
-    public abstract float Volume { get; set; }
+    public abstract float Volume {
+        get; set;
+    }
 
     /// <summary>
     /// Property to be overridden by subclasses to control pitch.
     /// </summary>
-    public abstract float Pitch { get; set; }
+    public abstract float Pitch {
+        get; set;
+    }
 
     /// <summary>
     /// Property to be overridden by subclasses to control pan.
     /// </summary>
-    public abstract float Pan { get; set; }
+    public abstract float Pan {
+        get; set;
+    }
 
     /// <summary>
     /// Method to be overridden by subclasses for playing audio.

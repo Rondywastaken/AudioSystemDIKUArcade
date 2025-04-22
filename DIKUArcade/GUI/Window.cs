@@ -2,9 +2,9 @@
 
 using System;
 using System.Numerics;
+using DIKUArcade.Audio;
 using DIKUArcade.Graphics;
 using DIKUArcade.Input;
-using DIKUArcade.Audio;
 
 /// <summary>
 /// Represents a graphical window in the DIKUArcade game engine.
