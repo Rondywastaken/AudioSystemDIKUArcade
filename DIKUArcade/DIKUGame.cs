@@ -71,6 +71,7 @@ public abstract class DIKUGame {
     public void Run() {
 
         AppDomain.CurrentDomain.ProcessExit += handleForcedExit;
+        Console.CancelKeyPress += handleForcedExit;
 
         gameTimer = new GameTimer(30, 30);
 
@@ -100,7 +101,6 @@ public abstract class DIKUGame {
 
             Console.WriteLine(Environment.NewLine + "Terminating program...");
             // If exception occurs dispose resources
-            window.CloseWindow();
             window.Dispose();
             Environment.Exit(1);
         } 
@@ -108,7 +108,6 @@ public abstract class DIKUGame {
     }
 
     private void handleForcedExit(object? sender, EventArgs e) {
-        window.CloseWindow();
         window.Dispose();
         gameTimer = null;
     }
