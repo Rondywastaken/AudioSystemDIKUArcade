@@ -15,7 +15,7 @@ public class Game : DIKUGame {
         new Text("Click 'I' to play music", new Vector2(0.05f, 0.9f), 0.4f),
         new Text("Click 'O' to pause/resume music", new Vector2(0.05f, 0.85f), 0.4f),
         new Text("Click 'P' to stop music", new Vector2(0.05f, 0.8f), 0.4f),
-        new Text("Click 'Up'/'Down' to increase or decrease volume", new Vector2(0.05f, 0.75f), 0.4f),
+        new Text("Click 'Up'/'Down' to increase/decrease volume", new Vector2(0.05f, 0.75f), 0.4f),
         new Text("Click 'W'/'S' to increase or decrease pitch", new Vector2(0.05f, 0.7f), 0.4f),
         new Text("Click 'E' to increase Pan (LEFT)", new Vector2(0.05f, 0.65f), 0.4f),
         new Text("Click 'D' to decrease Pan (RIGHT)", new Vector2(0.05f, 0.60f), 0.4f),
@@ -42,7 +42,6 @@ public class Game : DIKUGame {
                     break;
                 case KeyboardKey.P: 
                     music.Stop();
-                    Console.WriteLine("Stopped music");
                     break;
                 case KeyboardKey.Up: 
                     music.Volume += 0.1f;

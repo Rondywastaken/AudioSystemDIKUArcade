@@ -15,7 +15,7 @@ public class AudioTest : ITestable {
     }
 
     public void Help() {
-        var help = "Do you hear the audio?";
+        var help = "Click the on keys shown in the game window to play audio!";
         Console.WriteLine(help);
     }
 }
