@@ -144,7 +144,7 @@ public class MusicAudio : Audio {
     /// </summary>
     public override void Dispose() {
         Raylib.UnloadMusicStream(music);
-        this.deleteTempFile();
+        this.DeleteTempFile();
         AudioManager.RemoveAudio(this);
     }
 

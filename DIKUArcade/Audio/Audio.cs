@@ -52,7 +52,7 @@ public abstract class Audio : IDisposable {
             if (!AudioDevice.IsInitialized) {
                 AudioDevice.OpenAudioDevice();
             }
-            Path = createTempFile(assembly, manifestResourceName);
+            Path = CreateTempFile(assembly, manifestResourceName);
             AudioManager.AddAudio(this);
         } catch (Exception e) {
             if (this.Path != null) {
@@ -75,7 +75,7 @@ public abstract class Audio : IDisposable {
     /// <exception cref="ArgumentNullException">
     /// Thrown if manifest resource doesn't exist
     /// </exception>
-    private string createTempFile(Assembly assembly, string manifestResourceName) {
+    private string CreateTempFile(Assembly assembly, string manifestResourceName) {
         using (Stream? stream = assembly.GetManifestResourceStream(manifestResourceName)) {
             if (stream is null) {
                 throw new ArgumentNullException($"Resource: {manifestResourceName} does not exist. "
@@ -100,7 +100,7 @@ public abstract class Audio : IDisposable {
     /// <summary>
     /// Deletes the temporary audio file associated to the audio instance.
     /// </summary>
-    protected void deleteTempFile() {
+    protected void DeleteTempFile() {
         File.Delete(Path);
     }
 

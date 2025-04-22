@@ -131,7 +131,7 @@ public class SoundEffectAudio : Audio {
             }
         }
         Raylib.UnloadSound(sound);
-        this.deleteTempFile();
+        this.DeleteTempFile();
         AudioManager.RemoveAudio(this);
     }
 
@@ -147,7 +147,7 @@ public class SoundEffectAudio : Audio {
     /// </remarks>
     public void PlaySoundMulti(int size = 10) {
         if (!hasInitialized || size > soundMulti.Length) {
-            createSoundAliases(size);
+            CreateSoundAliases(size);
         }
 
         Raylib.PlaySound(soundMulti[currentSound]);
@@ -160,7 +160,7 @@ public class SoundEffectAudio : Audio {
     /// <summary>
     /// Creates an array of soundaliases based on the sound and the <paramref name="size"/>
     /// </summary>
-    private void createSoundAliases(int size) {
+    private void CreateSoundAliases(int size) {
         if (hasInitialized) {
             for (int i = 1; i < soundMulti.Length; i++) {
                 Raylib.UnloadSoundAlias(soundMulti[i]);

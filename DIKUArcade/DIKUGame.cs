@@ -70,8 +70,8 @@ public abstract class DIKUGame {
     /// </summary>
     public void Run() {
 
-        AppDomain.CurrentDomain.ProcessExit += handleForcedExit;
-        Console.CancelKeyPress += handleForcedExit;
+        AppDomain.CurrentDomain.ProcessExit += HandleForcedExit;
+        Console.CancelKeyPress += HandleForcedExit;
 
         gameTimer = new GameTimer(30, 30);
 
@@ -107,7 +107,7 @@ public abstract class DIKUGame {
         gameTimer = null;
     }
 
-    private void handleForcedExit(object? sender, EventArgs e) {
+    private void HandleForcedExit(object? sender, EventArgs e) {
         window.Dispose();
         gameTimer = null;
     }
